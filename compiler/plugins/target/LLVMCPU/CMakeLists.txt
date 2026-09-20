@@ -205,3 +205,6 @@ _add_optional_llvm_target_deps(ARM)
 _add_optional_llvm_target_deps(RISCV)
 _add_optional_llvm_target_deps(WebAssembly)
 _add_optional_llvm_target_deps(X86)
+# Experimental target: only present when LLVM_EXPERIMENTAL_TARGETS_TO_BUILD
+# names it, which the TARGET guard inside the function already handles.
+_add_optional_llvm_target_deps(Xtensa)

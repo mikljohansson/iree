@@ -502,6 +502,10 @@ static void initializeLLVMTargets() {
 #define LLVM_INITIALIZE_TARGET_X86() LLVM_INITIALIZE_GENERIC(X86)
 #define LLVM_INITIALIZE_TARGET_WebAssembly()                                   \
   LLVM_INITIALIZE_GENERIC(WebAssembly)
+// Xtensa is an LLVM experimental target: Targets.def only names it when the
+// build enabled it via LLVM_EXPERIMENTAL_TARGETS_TO_BUILD, and without this
+// line such a build fails to compile this file.
+#define LLVM_INITIALIZE_TARGET_Xtensa() LLVM_INITIALIZE_GENERIC(Xtensa)
 
 // We must no-op the name of each target we don't care about. This is annoying,
 // but targets aren't created every day and isn't the end of the world. The
